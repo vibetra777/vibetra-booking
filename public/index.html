@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vibetra Events</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #000000, #4b006e, #000000, #8e2de2);
+    background-size: 400% 400%;
+    animation: aurora 12s ease infinite;
+    color:white;
+}
+
+/* Aurora Animation */
+@keyframes aurora{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+    color:#d8b4ff;
+}
+
+.logo img{
+    width:50px;
+    margin-right:2px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav ul li:hover{
+    color:#d8b4ff;
+    transform:scale(1.1);
+}
+
+/* ===== SECTIONS ===== */
+section{
+    padding:120px 20px 80px 20px;
+    text-align:center;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+p{
+    max-width:600px;
+    margin:auto;
+    opacity:0.8;
+}
+
+/* ===== BOOKING CARD ===== */
+.booking-card{
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:15px;
+    max-width:400px;
+    margin:30px auto;
+    box-shadow:0 0 30px rgba(142,45,226,0.4);
+    transition:0.3s;
+}
+
+.booking-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 50px rgba(142,45,226,0.7);
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin:12px 0;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#8e2de2;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#b84dff;
+    transform:scale(1.05);
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:black;
+    padding:20px;
+    text-align:center;
+    opacity:0.7;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="logo.png">
+        Vibetra
+    </div>
+
+    <ul>
+        <li onclick="scrollToSection('home')">Home</li>
+        <li onclick="scrollToSection('about')">About Us</li>
+        <li onclick="scrollToSection('gallery')">Gallery</li>
+        <li onclick="scrollToSection('contact')">Contact Us</li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <h1>Celebrate Your Moments with Vibetra 💜</h1>
+    <p>Premium mini hall for birthdays, anniversaries, private screenings and gaming parties.</p>
+
+    <div class="booking-card">
+        <h2>Book Your Slot</h2>
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="date" id="date" required>
+            <select id="time" required>
+                <option value="">Select Slot</option>
+                <option>10AM - 1PM</option>
+                <option>2PM - 5PM</option>
+                <option>6PM - 9PM</option>
+            </select>
+            <input type="text" id="phone" placeholder="WhatsApp Number" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h1>About Vibetra</h1>
+    <p>Located in Chennai, Vibetra offers a stylish celebration space with Dolby surround system, projector screening, PS5 gaming and premium decorations.</p>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h1>Our Gallery</h1>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1515165562835-c3b8c3f6a8f5">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h1>Contact Us</h1>
+    <p>📍 Chennai</p>
+    <p>📞 6385470476</p>
+    <p>📧 vibetra777@gmail.com</p>
+</section>
+
+<footer>
+© 2026 Vibetra | All Rights Reserved
+</footer>
+
+<script>
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("bookingForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const phone = document.getElementById("phone").value;
+
+    const response = await fetch("/book",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({name,date,time})
+    });
+
+    const data = await response.json();
+
+    if(data.success){
+        alert("Booking Successful 💜");
+
+        const message = `🎉 Vibetra Booking Confirmed!
+
+Hi ${name},
+Date: ${date}
+Time: ${time}
+
+See you soon 💜`;
+
+        const encoded = encodeURIComponent(message);
+
+        window.open(`https://wa.me/916385470476?text=${encoded}`, "_blank");
+
+        document.getElementById("bookingForm").reset();
+    }else{
+        alert("Slot already booked!");
+    }
+});
+</script>
+
+</body>
+</html>
