@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // ===== DATABASE =====
-mongoose.connect("mongodb://127.0.0.1:27017/vibetraDB")
+mongoose.connect(process.env.MONGO_URI);
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
 
@@ -90,4 +90,5 @@ app.delete("/delete-booking/:id", async (req, res) => {
 // ===== START SERVER =====
 app.listen(5000, () => {
     console.log("Server running on port 5000");
+
 });
